@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ColorPicker.css'
 
 const colorNames = ['Tomato', 'Aquamarine', 'BlueViolet', 'Chartreuse', 'CornflowerBlue', 'Thistle', 'SpringGreen', 'SaddleBrown', 'PapayaWhip', 'MistyRose'];
 
@@ -20,7 +21,5 @@ function ColorPicker() {
         </div>
     );
 }
-
-
 
 export default ColorPicker;
