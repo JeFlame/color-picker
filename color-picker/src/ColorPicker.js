@@ -1,29 +1,26 @@
-// import the default export and the named export `useState` from the 'react' library
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const ColorPicker = () => {
-  // call useState and assign its return values to `color` and `setColor`
-  const [color, setColor] = useState();
+const colorNames = ['Tomato', 'Aquamarine', 'BlueViolet', 'Chartreuse', 'CornflowerBlue', 'Thistle', 'SpringGreen', 'SaddleBrown', 'PapayaWhip', 'MistyRose'];
 
- const divStyle = {backgroundColor: color};
+function ColorPicker() {
+    const [color, setColor] = useState('Tomato');
 
-  return (
-    <div style={divStyle}>
-      <p>The color is {color}</p>
-      <button onClick={() => setColor('Aquamarine')}>
-        Aquamarine
-      </button>
-      <button onClick={() => setColor('BlueViolet')}>
-        BlueViolet
-      </button>
-      <button onClick={() => setColor('Chartreuse')}>
-        Chartreuse
-      </button>
-      <button onClick={() => setColor('CornflowerBlue')}>
-        CornflowerBlue
-      </button>
-    </div>
-  );
+    const divStyle = {backgroundColor: color};
+
+    return (
+        <div style={divStyle}>
+        <p>Selected color: {color}</p>
+        {colorNames.map((colorName)=>(
+            <button 
+            onClick={() => setColor(colorName)} 
+            key={colorName}>
+                {colorName}
+            </button>
+        ))}
+        </div>
+    );
 }
+
+
 
 export default ColorPicker;
